@@ -1,1 +1,33 @@
-<p>login-page works!</p>
+<div class="form-container">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+
+    <h2 class="form-title">Login Now</h2>
+
+
+    <div>
+      <label for="username">Username</label> <br>
+      <input type="text" formControlName="username">
+      <div *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.invalid">
+        <small class="form-error" *ngIf="loginForm.get('username')?.errors?.['required']">Username is required</small>
+      </div>
+    </div>
+    <br>
+
+    <div>
+      <label for="password">Password</label> <br>
+      <input type="text" formControlName="password">
+      <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+        <small class="form-error" *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</small>
+      </div>
+    </div>
+    <br>
+
+    <div>
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
+    </div>
+
+
+  </form>
+
+</div>
