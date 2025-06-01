@@ -6,9 +6,9 @@ import { HomePage } from './pages/home-page/home-page';
 export const routes: Routes = [
   { path: 'login', component: LoginPage },
   { path: 'register', component: RegisterPage },
-  { path: 'home', component: HomePage },
+  { path: '', component: HomePage },
 
 
   // fallback
-  { path: '**', redirectTo: '/home' },
+  { path: '**', redirectTo: '' },
 ];
